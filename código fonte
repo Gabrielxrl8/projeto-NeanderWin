@@ -1,0 +1,15 @@
+## 🧠 Código-fonte
+
+```assembly
+ORG 0             ; Início do programa
+
+LDA NUM1          ; Carrega NUM1 no acumulador
+ADD NUM2          ; Soma NUM2 ao acumulador
+STA RESULT        ; Armazena o resultado em RESULT
+HLT               ; Encerra o programa
+
+; Dados
+ORG 10
+NUM1: DB 6        ; Primeiro número (6)
+NUM2: DB 3        ; Segundo número (3)
+RESULT: DB 0      ; Local onde o resultado será salvo (6 + 3 = 9)
