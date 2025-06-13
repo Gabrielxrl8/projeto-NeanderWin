@@ -1,15 +1,19 @@
-## 🧠 Código-fonte
+# Simulação simples da adição binária de dois valores
 
-```assembly
-ORG 0             ; Início do programa
+# Memória simulada
+memoria = {
+    "NUM1": 6,      # Primeiro número
+    "NUM2": 3,      # Segundo número
+    "RESULT": 0     # Onde o resultado será armazenado
+}
 
-LDA NUM1          ; Carrega NUM1 no acumulador
-ADD NUM2          ; Soma NUM2 ao acumulador
-STA RESULT        ; Armazena o resultado em RESULT
-HLT               ; Encerra o programa
+# Acumulador
+AC = 0  # Registrador acumulador (como no Neander)
 
-; Dados
-ORG 10
-NUM1: DB 6        ; Primeiro número (6)
-NUM2: DB 3        ; Segundo número (3)
-RESULT: DB 0      ; Local onde o resultado será salvo (6 + 3 = 9)
+# Instruções simuladas
+AC = memoria["NUM1"]     # LDA NUM1
+AC += memoria["NUM2"]    # ADD NUM2
+memoria["RESULT"] = AC   # STA RESULT
+
+# Resultado
+print(f"O resultado de {memoria['NUM1']} + {memoria['NUM2']} é: {memoria['RESULT']}")
